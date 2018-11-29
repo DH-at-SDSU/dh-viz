@@ -1,5 +1,7 @@
 # SDSU Digital Humanities Initiative Network Visualization
 
+SDSU's Digital Humanities and Global Diversity Initiative web-based visual topometric network mapping and archive of humanities and qualitative social science research by students, faculty, and alumni.
+
 ## Available Scripts
 
 In the project directory, you can run:
