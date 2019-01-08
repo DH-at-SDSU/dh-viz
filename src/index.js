@@ -3,11 +3,8 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/configStore";
 import App from "./App";
-import configStore from "./configStore"
 
 import * as serviceWorker from "./serviceWorker";
-
-const store = configStore()
 
 render(
   <Provider store={store}>
