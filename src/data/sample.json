@@ -1,0 +1,42 @@
+{
+  "name": "John Smith",
+  "avatar": null,
+  "title": "Professor",
+  "university": "CSU San Diego",
+  "college": "Humanities",
+  "department": "Latin American Studies",
+  "address": {
+    "city": "San Diego",
+    "zipcode": "99999",
+    "country": "United States of America",
+    "language": [
+      "English"
+    ]
+  },
+  "pronoun": "he/him/them",
+  "affiliation": null,
+  "field": [
+    "Latin American Studies",
+    "Humanities"
+  ],
+  "orcid": null,
+  "education": {
+    "University of California, San Diego": {
+      "field": "Humanities",
+      "degree": "B.A.",
+      "year": 1996
+    }
+  },
+  "publications": [],
+  "collaborators": [
+    "Happy Hans",
+    "Super Stacy",
+    "Cool Carl"
+  ],
+  "mentors": [
+    "Angry Al",
+    "Janky Joe",
+    "Weeping Walt"
+  ],
+  "keywords": []
+}

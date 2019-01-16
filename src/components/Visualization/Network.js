@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Network extends Component {
+  componentDidMount() {
+    //this.createNetwork();
+  }
+
   render() {
     return <div />;
   }
