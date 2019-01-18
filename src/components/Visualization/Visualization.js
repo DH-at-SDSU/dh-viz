@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import Network from "./Network";
 
 class Visualization extends Component {
   state = {};
   render() {
-    return <div>Viz placeholder</div>;
+    return (
+      <div>
+        <Network />
+        Viz placeholder
+      </div>
+    );
   }
 }
 

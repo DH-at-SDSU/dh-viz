@@ -1,16 +1,46 @@
 import React, { Component } from "react";
+import {
+  InteractiveForceGraph,
+  ForceGraphNode,
+  ForceGraphLink
+} from "react-vis-force";
 
 class Network extends Component {
+  state = {
+    width: 960,
+    height: 500
+  };
   componentDidMount() {
     //this.createNetwork();
   }
 
   render() {
-    return <div />;
+    console.log(this.state);
+    return (
+      <InteractiveForceGraph
+        zoom
+        simulationOptions={{ height: 300, width: 300 }}
+        labelAttr="label"
+        onSelectNode={node => console.log(node)}
+        highlightDependencies
+      >
+        <ForceGraphNode
+          node={{ id: "first-node", label: "First node" }}
+          fill="red"
+        />
+        <ForceGraphNode
+          node={{ id: "second-node", label: "Second node" }}
+          fill="blue"
+        />
+        <ForceGraphLink
+          link={{ source: "first-node", target: "second-node" }}
+        />
+      </InteractiveForceGraph>
+    );
   }
 }
 
-const createNetwork = () => {
+/* const createNetwork = () => {
   const height = 800;
   const width = 960;
 
@@ -87,6 +117,6 @@ const createNetwork = () => {
   network.toggleLayout = newLayout => {};
 
   return network;
-};
+}; */
 
 export default Network;
