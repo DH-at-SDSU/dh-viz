@@ -2,42 +2,84 @@ import React, { Component } from "react";
 import {
   InteractiveForceGraph,
   ForceGraphNode,
-  ForceGraphLink
+  ForceGraphLink,
+  ForceGraphArrowLink
 } from "react-vis-force";
+import Amplify, {
+  Analytics,
+  Storage,
+  API,
+  graphqlOperation
+} from "aws-amplify";
+import { ForceGraph2D } from "react-force-graph";
+import test1 from "../../data/sample.json";
+import test2 from "../../data/test1.json";
 
 class Network extends Component {
   state = {
     width: 960,
     height: 500
   };
+
   componentDidMount() {
     //this.createNetwork();
+    /* d3.json(test).then(function(data) {
+      console.log(data[0]);
+    }); */
+    console.log(test1);
   }
+
+  post = async () => {
+    console.log("calling api");
+    const response = await API.post("dhvizAPI", "/items", {
+      body: {
+        id: "1",
+        name: "hello amplify!"
+      }
+    });
+    alert(JSON.stringify(response, null, 2));
+  };
+  get = async () => {
+    console.log("calling api");
+    const response = await API.get("dhvizAPI", "/items/object/1");
+    alert(JSON.stringify(response, null, 2));
+  };
+  list = async () => {
+    console.log("calling api");
+    const response = await API.get("dhvizAPI", "/items/1");
+    alert(JSON.stringify(response, null, 2));
+  };
 
   render() {
     console.log(this.state);
     return (
-      <InteractiveForceGraph
+      <div>
+        <ForceGraph2D
+          nodeAutoColorBy="value"
+          nodeLabel="name"
+          graphData={test2}
+        />
+    );
+  }
+}
+
+{
+  /* <InteractiveForceGraph
         zoom
-        simulationOptions={{ height: 300, width: 300 }}
-        labelAttr="label"
+        simulationOptions={{ height: 300, width: 300, animate: true }}
+        labelAttr="id"
         onSelectNode={node => console.log(node)}
         highlightDependencies
       >
-        <ForceGraphNode
-          node={{ id: "first-node", label: "First node" }}
-          fill="red"
-        />
-        <ForceGraphNode
-          node={{ id: "second-node", label: "Second node" }}
-          fill="blue"
-        />
-        <ForceGraphLink
-          link={{ source: "first-node", target: "second-node" }}
-        />
-      </InteractiveForceGraph>
-    );
-  }
+        <ForceGraphNode node={{ id: 1, label: "First node" }} fill="red" />
+        <ForceGraphNode node={{ id: 2, label: "Second node" }} fill="blue" />
+        <ForceGraphNode node={{ id: 3, label: "Second node" }} fill="green" />
+        <ForceGraphNode node={{ id: 4, label: "Second node" }} fill="yellow" />
+        <ForceGraphLink link={{ source: 1, target: 2 }} />
+        <ForceGraphLink link={{ source: 1, target: 4 }} />
+        <ForceGraphLink link={{ source: 3, target: 1 }} />
+        <ForceGraphLink link={{ source: 2, target: 4 }} />
+      </InteractiveForceGraph> */
 }
 
 /* const createNetwork = () => {
