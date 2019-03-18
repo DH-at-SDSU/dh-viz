@@ -1,4 +1,4 @@
-const authConfig = {
+const awsConfig = {
     Auth: {
 
         // REQUIRED only for Federated Authentication - Amazon Cognito Identity Pool ID
@@ -22,20 +22,20 @@ const authConfig = {
 
         // OPTIONAL - Configuration for cookie storage
         // Note: if the secure flag is set to true, then the cookie transmission requires a secure protocol
-        cookieStorage: {
+        //cookieStorage: {
         // REQUIRED - Cookie domain (only required if cookieStorage is provided)
-            domain: process.env.REACT_APP_AWS_DOMAIN,
+            //domain: process.env.REACT_APP_AWS_DOMAIN,
         // OPTIONAL - Cookie path
-            path: '/',
+           // path: '/',
         // OPTIONAL - Cookie expiration in days
-            expires: 365,
+            //expires: 365,
         // OPTIONAL - Cookie secure flag
         // Either true or false, indicating if the cookie transmission requires a secure protocol (https).
-            secure: true
-        },
+           //secure: true
+        //},
 
         // OPTIONAL - customized storage object
-        storage: new MyStorage(),
+        //storage: new MyStorage(),
         
         // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
         authenticationFlowType: 'USER_PASSWORD_AUTH'
@@ -43,7 +43,7 @@ const authConfig = {
 };
 
 const signUpConfig = {
-    hiddenDefaults: ["phone_number"]
+    hiddenDefaults: ["username", "phone_number"]
   }
  
-export { authConfig, signUpConfig } ;
+export { awsConfig, signUpConfig } ;
