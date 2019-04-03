@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Header from "./components/Main/Header";
 import MainPanel from "./components/Main/MainPanel";
-
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <Header />
         <MainPanel />
       </div>

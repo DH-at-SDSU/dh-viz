@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "./redux/configStore";
-import AppWithAuth from "./AppWithAuth.js";
+import App from "./App.js";
 
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <AppWithAuth />
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
