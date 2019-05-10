@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import * as mutations from '../../graphql/mutations';
+import * as mutations from "../../graphql/mutations";
 
 class Profile extends Component {
   state = {};
@@ -8,7 +8,7 @@ class Profile extends Component {
   handleChange = itemName => event => {
     this.setState({
       [itemName]: event.target.value
-    })
+    });
   };
 
   handleSubmit = event => {
@@ -16,15 +16,14 @@ class Profile extends Component {
       uid: this.state.uid,
       name: this.state.name,
       jobTitle: this.state.jobTitle
-    }
+    };
 
-    console.log("User Details : " + JSON.stringify(userDetails))
-    API.graphql(graphqlOperation(mutations.createUser, {input: userDetails}))
+    console.log("User Details : " + JSON.stringify(userDetails));
+    API.graphql(graphqlOperation(mutations.createUser, { input: userDetails }));
     event.preventDefault();
-  }
+  };
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <h3>Profile placeholder</h3>
@@ -36,12 +35,20 @@ class Profile extends Component {
           <br />
           <label>
             Name:
-            <input type="text" name="name" onChange={this.handleChange("name")} />
+            <input
+              type="text"
+              name="name"
+              onChange={this.handleChange("name")}
+            />
           </label>
           <br />
           <label>
             Title:
-            <input type="text" name="jobTitle" onChange={this.handleChange("jobTitle")} />
+            <input
+              type="text"
+              name="jobTitle"
+              onChange={this.handleChange("jobTitle")}
+            />
           </label>
           <br />
           <input type="submit" value="Submit" onClick={this.handleSubmit} />

@@ -1,0 +1,52 @@
+.main {
+  flex-grow: 7;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5% 0.5% 0.5% 0.5%;
+}
+
+.head-logo {
+  flex-grow: 4;
+  width: 20%;
+  height: auto;
+  margin-bottom: 1.5%;
+}
+
+.head-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 55px;
+  background-color: #b50000;
+}
+
+.head-content {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+a {
+  color: white;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}

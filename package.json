@@ -10,15 +10,15 @@
     "enzyme-adapter-react-16": "^1.7.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-force-graph": "^1.17.6",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-    "react-vis-force": "^0.3.1",
+    "react-sigma": "^1.2.30",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "serverless": "^1.37.1",
+    "sigma": "^1.2.1",
     "uuid": "^3.3.2"
   },
   "scripts": {

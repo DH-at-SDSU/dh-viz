@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-
+import "./Homepage.css";
 class Homepage extends Component {
-  state = {};
   render() {
-    return <div>Homepage placeholder</div>;
+    return (
+      <div className="home">
+        <h1>Welcome to Digital Bridges!</h1>
+      </div>
+    );
   }
 }
 

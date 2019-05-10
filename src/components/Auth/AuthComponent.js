@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { I18n } from "aws-amplify";
-import Amplify from "aws-amplify";
-import awsmobile from "../../aws-exports.js";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import Amplify, { Auth } from "aws-amplify";
 import { Authenticator } from "aws-amplify-react";
-import { ForgotPassword } from "aws-amplify-react/dist/Auth";
+import { I18n } from "aws-amplify";
+import awsmobile from "../../aws-exports.js";
+import { sendAuthState, sendAuthUID } from "../../redux/auth/authActions";
+import { getAuthState, getAuthUID } from "../../redux/auth/authSelectors";
+import "./Auth.css";
 
 Amplify.configure(awsmobile);
 
@@ -40,29 +44,58 @@ const authScreenLabels = {
   }
 };
 
+const authTheme = {
+  button: { "background-color": "#b50000" }
+};
+
 I18n.setLanguage("en");
 I18n.putVocabularies(authScreenLabels);
 
 class AuthComponent extends Component {
+  state = {};
+
   handleStateChange = state => {
-    console.log(state);
+    const { sendAuthState, sendAuthUID } = this.props;
+
     if (state === "signedIn") {
+      Auth.currentAuthenticatedUser({ bypassCache: false }).then(user => {
+        sendAuthState(state);
+        sendAuthUID(user.id.split(":")[1]);
+      });
+      this.props.history.push("/");
     }
   };
+
   render() {
     return (
       <Authenticator
         signUpConfig={signUpConfig}
         federated={federated}
+        theme={authTheme}
         onStateChange={this.handleStateChange}
-        hide={[ForgotPassword]}
       />
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {};
+const mapStateToProps = state => {
+  return {
+    authState: getAuthState(state),
+    authUID: getAuthUID(state)
+  };
 };
 
-export default AuthComponent;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      sendAuthState,
+      sendAuthUID
+    },
+    dispatch
+  );
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AuthComponent);

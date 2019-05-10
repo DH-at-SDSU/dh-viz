@@ -4,7 +4,7 @@ import MainPanel from "./components/Main/MainPanel";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Header />
         <MainPanel />
       </div>
