@@ -46,7 +46,7 @@ const authScreenLabels = {
 };
 
 const authTheme = {
-  button: { "background-color": "#b50000" }
+  button: { "backgroundColor": "#b50000" }
 };
 
 I18n.setLanguage("en");
