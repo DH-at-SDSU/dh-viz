@@ -40,7 +40,8 @@ const federated = {
 
 const authScreenLabels = {
   en: {
-    Username: "Email"
+    Username: "Email",
+    "Enter your username": "Enter your email"
   }
 };
 

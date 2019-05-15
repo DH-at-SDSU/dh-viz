@@ -4,8 +4,12 @@
 export const getUser = `query GetUser($id: ID!) {
   getUser(id: $id) {
     uid
-    name
+    email
+    firstName
+    lastName
+    school
     jobTitle
+    fieldsOfStudy
   }
 }
 `;
@@ -17,8 +21,12 @@ export const listUsers = `query ListUsers(
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       uid
-      name
+      email
+      firstName
+      lastName
+      school
       jobTitle
+      fieldsOfStudy
     }
     nextToken
   }
