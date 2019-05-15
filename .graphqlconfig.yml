@@ -1,5 +1,5 @@
 projects:
-  dhVizGraphQLAPI:
+  dhprojectapi:
     schemaPath: src\graphql\schema.json
     includes:
       - src\graphql\**\*.js
@@ -10,7 +10,7 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src\graphql
-        graphQLApiId: oarkvnmrinbjhklybjfcm7fxyu
+        graphQLApiId: vcoe5sjig5cvxh6lv57nslumbe
       endpoints:
         prod: >-
-          https://yfme2giipna4no775sqex7j4am.appsync-api.us-west-2.amazonaws.com/graphql
+          https://klff44tfjjgone3i5ntenjxfv4.appsync-api.us-west-2.amazonaws.com/graphql
