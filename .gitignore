@@ -63,7 +63,7 @@ typings/
 
 # dependencies
 /node_modules
-/aws-exports.js
+#/aws-exports.js
 /.pnp
 .pnp.js
 
