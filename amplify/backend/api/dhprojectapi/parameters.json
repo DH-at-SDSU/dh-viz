@@ -1,0 +1,4 @@
+{
+    "AppSyncApiName": "dhprojectapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST"
+}

@@ -74,7 +74,13 @@ typings/
 /build
 
 # aws amplify
-/amplify
+amplify/\#current-cloud-backend
+amplify/backend/awscloudformation
+amplify/.config/local-*
+amplify/backend/amplify-meta.json
+awsconfiguration.json
+src/aws-exports.js
+dist/
 
 # misc
 .DS_Store
@@ -88,10 +94,3 @@ yarn-debug.log*
 yarn-error.log*
 
 credentials.csv
-
-# amplify
-amplify/\#current-cloud-backend
-amplify/.config/local-*
-amplify/backend/amplify-meta.json
-awsconfiguration.json
-src/aws-exports.js

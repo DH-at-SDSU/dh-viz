@@ -1,0 +1,6 @@
+{
+    "AppSyncApiName": "dhprojectapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "S3DeploymentBucket": "dh-project-20190515124522-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/73f29eba773e28c427302bf2bff8e21eb08cb005"
+}

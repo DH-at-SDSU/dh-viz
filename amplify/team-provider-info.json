@@ -1,0 +1,21 @@
+{
+    "dhenv": {
+        "awscloudformation": {
+            "AuthRoleName": "dh-project-20190515124522-authRole",
+            "UnauthRoleArn": "arn:aws:iam::146310699115:role/dh-project-20190515124522-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::146310699115:role/dh-project-20190515124522-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "dh-project-20190515124522-deployment",
+            "UnauthRoleName": "dh-project-20190515124522-unauthRole",
+            "StackName": "dh-project-20190515124522",
+            "StackId": "arn:aws:cloudformation:us-west-2:146310699115:stack/dh-project-20190515124522/16ce39d0-774a-11e9-bf6b-06a411f6609a"
+        },
+        "categories": {
+            "auth": {
+                "dhcognito": {
+                    "googleClientId": "54481786142-5id0rbg42ij3evo4up03oe979vrqt5if.apps.googleusercontent.com"
+                }
+            }
+        }
+    }
+}
